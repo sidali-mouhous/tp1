@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FTEL Market</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div>
+        <h1>FTEL Market</h1>
+      </div>
+      <nav>
+        <a href="#catalog">Catalogue</a>
+        <a href="#add-product">Ajouter</a>
+        <a href="/swagger">Swagger</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel intro">
+      <div>
+        <p class="eyebrow">Marketplace</p>
+        <h2>Catalogue produit</h2>
+      </div>
+      <div class="stats" id="stats"></div>
+    </section>
+
+    <section class="panel">
+      <h3>Catégories</h3>
+      <div id="categories" class="categories"></div>
+      <form id="categoryForm" class="inline-form">
+        <input id="categoryName" type="text" placeholder="Nom de la catégorie" required />
+        <button type="submit">Ajouter</button>
+      </form>
+    </section>
+
+    <section id="add-product" class="panel">
+      <h3 id="formTitle">Ajouter un produit</h3>
+      <form id="productForm" class="product-form">
+        <input id="productId" type="hidden" />
+
+        <div class="field-group">
+          <label for="name">Nom</label>
+          <input id="name" name="name" type="text" required />
+        </div>
+
+        <div class="field-group">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="3"></textarea>
+        </div>
+
+        <div class="grid-2">
+          <div class="field-group">
+            <label for="price">Prix (€)</label>
+            <input id="price" name="price" type="number" step="0.01" min="0.01" required />
+          </div>
+
+          <div class="field-group">
+            <label for="quantityInStock">Quantité</label>
+            <input id="quantityInStock" name="quantityInStock" type="number" min="0" required />
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="categoryId">Catégorie</label>
+          <select id="categoryId" name="categoryId" required></select>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="primary">Enregistrer</button>
+          <button type="button" id="cancelEdit" class="secondary hidden">Annuler</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="catalog" class="panel">
+      <div class="section-head">
+        <h3>Produits</h3>
+      </div>
+      <div id="products" class="products"></div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

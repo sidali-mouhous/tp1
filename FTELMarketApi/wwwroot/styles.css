@@ -1,0 +1,253 @@
+:root {
+  --bg: #f4f7fb;
+  --panel: #ffffff;
+  --card: #f7f9fc;
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --danger: #ef4444;
+  --text: #10213a;
+  --muted: #5d6b82;
+  --border: #dfe7f3;
+  --success: #22c55e;
+  --shadow: 0 12px 30px rgba(16, 33, 58, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(180deg, #eef5ff 0%, var(--bg) 100%);
+  color: var(--text);
+}
+
+.container {
+  width: min(1200px, calc(100% - 30px));
+  margin: 0 auto;
+}
+
+.topbar {
+  background: #0b1731;
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.nav h1 { margin: 0; font-size: 1.7rem; }
+
+.nav nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+main {
+  padding: 28px 0 50px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  margin-bottom: 22px;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.72rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+h2, h3 { margin-top: 0; }
+
+.stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  min-width: 140px;
+  padding: 14px 16px;
+}
+
+.stat-box strong {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.category-chip {
+  border: 1px solid var(--border);
+  background: #eaf2ff;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 600;
+}
+
+.inline-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+input, textarea, select, button {
+  font: inherit;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: white;
+  color: var(--text);
+}
+
+textarea { resize: vertical; }
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+button:hover { transform: translateY(-1px); }
+
+button.primary {
+  background: var(--primary);
+  color: white;
+}
+
+button.primary:hover { background: var(--primary-dark); }
+
+button.secondary {
+  background: #eef3ff;
+  color: var(--text);
+}
+
+button.danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.product-form {
+  display: grid;
+  gap: 18px;
+}
+
+.field-group {
+  display: grid;
+  gap: 8px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.product-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  display: grid;
+  gap: 16px;
+}
+
+.product-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+}
+
+.product-card h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.price {
+  color: var(--success);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.badge {
+  display: inline-block;
+  background: #e7f7ed;
+  color: #166534;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.hidden { display: none !important; }
+
+@media (max-width: 768px) {
+  .nav, .intro { display: block; }
+  .nav nav { margin-top: 12px; }
+  .grid-2 { grid-template-columns: 1fr; }
+}
